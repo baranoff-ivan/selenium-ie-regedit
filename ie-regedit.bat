@@ -13,3 +13,8 @@ rem To maintain connection to IE instance
 FOR %%D IN (HKLM, HKCU) DO (
 reg add "%%D\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BFCACHE" /v "iexplore.exe" /t "REG_DWORD" /d 0 /f
 )
+
+rem For Remote Desktop
+FOR %%D IN (HKLM, HKCU) DO (
+reg add "%%D\SOFTWARE\Microsoft\Terminal Server Client" /v "RemoteDesktop_SuppressWhenMinimized" /t "REG_DWORD" /d 2 /f
+)
